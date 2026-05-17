@@ -7,11 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1-McoJlqFOVeMCEHkzj1WMrx9pnunX4QS
 """
 
-pip install -r requirements.txt
-
-!pip install streamlit plotly pandas numpy google-genai
-!npm install -g localtunnel
-
 import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
