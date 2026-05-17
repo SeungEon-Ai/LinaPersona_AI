@@ -389,19 +389,18 @@ def call_gemini(api_key: str, system_prompt: str, user_message: str, history: li
         contents.append({"role": "user", "parts": [{"text": user_message}]})
 
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-2.5-flash-lite",
             contents=contents,
             config={
                 "system_instruction": system_prompt,
                 "temperature": 0.7,
-                "max_output_tokens": 1000,
+                "max_output_tokens": 700,
             },
         )
         return response.text
 
     except ImportError:
         return "⚠️ google-genai 패키지가 필요합니다. `pip install google-genai` 실행 후 다시 시도해주세요."
-    gemini
     error_msg = str(e)
 
     if "RESOURCE_EXHAUSTED" in error_msg or "429" in error_msg:
