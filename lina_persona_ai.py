@@ -434,7 +434,7 @@ with st.sidebar:
 
     st.markdown("---")
     st.markdown("#### 📎 데이터 출처")
-    st.markdown("KU Young Makers × 라이나생명\n설문 응답 102명 (20~30대 청년)")
+    st.markdown("Young Makers × 라이나생명\n설문 응답 102명 (20~30대 청년)")
     st.markdown("K-Means 군집분석 (K=3)")
 
 
