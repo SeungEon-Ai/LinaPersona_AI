@@ -19,7 +19,7 @@ import os
 # 페이지 설정
 # ──────────────────────────────────────────────
 st.set_page_config(
-    page_title="Persona Lab — KU Young Makers × 라이나생명",
+    page_title="Persona AI × 라이나생명",
     page_icon="🧬",
     layout="wide",
     initial_sidebar_state="collapsed",
