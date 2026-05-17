@@ -386,6 +386,7 @@ def call_gemini(api_key: str, system_prompt: str, user_message: str, history: li
             for msg in history:
                 role = "user" if msg["role"] == "user" else "model"
                 contents.append({"role": role, "parts": [{"text": msg["text"]}]})
+
         contents.append({"role": "user", "parts": [{"text": user_message}]})
 
         response = client.models.generate_content(
@@ -397,10 +398,11 @@ def call_gemini(api_key: str, system_prompt: str, user_message: str, history: li
                 "max_output_tokens": 700,
             },
         )
+
         return response.text
 
-        except ImportError:
-        return "⚠️ google-genai 패키지가 필요합니다. `pip install google-genai` 실행 후 다시 시도해주세요."
+    except ImportError:
+        return "⚠️ google-genai 패키지가 필요합니다. requirements.txt에 google-genai를 추가해주세요."
 
     except Exception as e:
         error_msg = str(e)
