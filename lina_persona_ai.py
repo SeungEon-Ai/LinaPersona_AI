@@ -443,7 +443,7 @@ with st.sidebar:
 # ──────────────────────────────────────────────
 st.markdown("""
 <div class="main-header">
-    <div class="tag"> LINA Life Insurance (TEAM 5)</div>
+    <div class="tag"> LINA Life Insurance X Young Makers (TEAM 5)</div>
     <h1>🧬 Lina Persona AI</h1>
     <div class="sub">102명 설문 데이터 기반 · AI 페르소나 3인 · 실시간 대화 & 마케팅 테스트</div>
 </div>
