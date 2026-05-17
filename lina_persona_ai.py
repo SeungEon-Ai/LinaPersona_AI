@@ -443,8 +443,8 @@ with st.sidebar:
 # ──────────────────────────────────────────────
 st.markdown("""
 <div class="main-header">
-    <div class="tag">KU Young Makers × Lina Life</div>
-    <h1>🧬 Persona Lab</h1>
+    <div class="tag">KU Young Makers × Lina Life (보험들5조)</div>
+    <h1>🧬 Lina Persona AI</h1>
     <div class="sub">102명 설문 데이터 기반 · AI 페르소나 3인 · 실시간 대화 & 마케팅 테스트</div>
 </div>
 """, unsafe_allow_html=True)
