@@ -22,7 +22,7 @@ st.set_page_config(
     page_title="Persona Lab — KU Young Makers × 라이나생명",
     page_icon="🧬",
     layout="wide",
-    initial_sidebar_state="collapsed",
+    initial_sidebar_state="expanded",
 )
 
 # ──────────────────────────────────────────────
