@@ -399,17 +399,19 @@ def call_gemini(api_key: str, system_prompt: str, user_message: str, history: li
         )
         return response.text
 
-    except ImportError:
+        except ImportError:
         return "⚠️ google-genai 패키지가 필요합니다. `pip install google-genai` 실행 후 다시 시도해주세요."
-    error_msg = str(e)
 
-    if "RESOURCE_EXHAUSTED" in error_msg or "429" in error_msg:
-        return (
-            "⚠️ 현재 Gemini API 사용 한도가 초과되었습니다.\n\n"
-            "Google AI Studio에서 API 키의 Billing/Quota 상태를 확인하거나, 다른 API 키를 입력해 주세요."
-        )
+    except Exception as e:
+        error_msg = str(e)
 
-    return f"⚠️ API 오류가 발생했습니다: {error_msg}"
+        if "RESOURCE_EXHAUSTED" in error_msg or "429" in error_msg:
+            return (
+                "⚠️ 현재 Gemini API 사용 한도가 초과되었거나, 이 API 키의 할당량이 부족합니다.\n\n"
+                "Google AI Studio에서 API 키의 Billing/Quota 상태를 확인하거나, 다른 API 키를 입력해 주세요."
+            )
+
+        return f"⚠️ API 오류가 발생했습니다: {error_msg}"
 
 
 # ──────────────────────────────────────────────
@@ -830,7 +832,6 @@ with tab4:
                         <div style="font-size:0.75rem; color:#666;">/10점</div>
                     </div>
                     """, unsafe_allow_html=True)
-
-                gemini
+                except Exception as e:
                     st.error(f"⚠️ 응답 파싱 오류: {str(e)}")
                     st.code(raw, language="text")
